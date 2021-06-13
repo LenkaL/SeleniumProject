@@ -13,19 +13,19 @@ public class SignInTest extends BaseTest{
     }
     @Test(priority = 0)
     public void signInInvalidEmail() throws InterruptedException {
-        String username = excelReader.getStringData("SigninTest", 5, 3);
-        String textForAssertion = excelReader.getStringData("SigninTest", 7, 3);
+        String username = excelReader.getStringData("SigninInvalidEmail", 5, 2);
+        String textForAssertion = excelReader.getStringData("SigninInvalidEmail", 7, 2);
         signInForm(username);
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         String actualText = signInPage.errorInvalidEmailText();
         Assert.assertEquals(actualText, textForAssertion);
     }
     @Test(priority = 1)
     public void signInWithEmptyField() throws InterruptedException {
-        String username = excelReader.getStringData("SigninTest", 5, 4);
-        String textForAssertion = excelReader.getStringData("SigninTest", 7, 4);
+        String username = excelReader.getStringData("SigninEmptyField", 5, 2);
+        String textForAssertion = excelReader.getStringData("SigninEmptyField", 7, 2);
         signInForm(username);
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         String actualText = signInPage.errorInvalidEmailText();
         Assert.assertEquals(actualText, textForAssertion);
     }
@@ -34,7 +34,7 @@ public class SignInTest extends BaseTest{
         String username = excelReader.getStringData("SigninTest", 5, 2);
         String textForAssertion = excelReader.getStringData("SigninTest", 7, 2);
         signInForm(username);
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         String actualText = signInPage.successfullySigInText();
         Assert.assertEquals(actualText, textForAssertion);
     }
