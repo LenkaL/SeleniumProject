@@ -22,7 +22,7 @@ public class MyAddressTests extends LoginTests{
         String phone = excelReader.getStringData("AddNewAddress", 11, 2);
         String addressTitle = excelReader.getStringData("AddNewAddress", 12, 2);
         String textForAssertion = excelReader.getStringData("AddNewAddress", 14, 2);
-         addNewAddressForm(address,city, state, zip, phone, addressTitle);
+         addNewAddresForm(address,city, state, zip, phone, addressTitle);
         String actualText = myAddressPage.addNewAddresText();
         Assert.assertEquals(actualText, textForAssertion);
     }
@@ -35,7 +35,7 @@ public class MyAddressTests extends LoginTests{
         String phone = excelReader.getStringData("UpdateAddress", 11, 2);
         String addressTitle = excelReader.getStringData("UpdateAddress", 12, 2);
         String textForAssertion = excelReader.getStringData("UpdateAddress", 14, 2);
-        updateAddressFill(address,city, state, zip, phone, addressTitle);
+        updateAddressForm(address,city, state, zip, phone, addressTitle);
         String actualText = myAddressPage.addNewAddresText();
         Assert.assertEquals(actualText, textForAssertion);
     }
@@ -48,7 +48,7 @@ public class MyAddressTests extends LoginTests{
         Thread.sleep(2500);
         myAddressPage.popUpClickOnDelete();
     }
-    public void addNewAddressForm(String address, String city, String state, String zip, String phone, String addressTitle) throws InterruptedException {
+    public void addNewAddresForm(String address, String city, String state, String zip, String phone, String addressTitle) throws InterruptedException {
         mainNavigation.signInClick();
         logInValidCredentials();
         myAccountSection.myAddressPageClick();
@@ -61,7 +61,7 @@ public class MyAddressTests extends LoginTests{
         myAddressPage.addresTitleInput(addressTitle);
         myAddressPage.saveButton();
     }
-    public void updateAddressFill(String address, String city, String state, String zip, String phone, String addressTitle) throws InterruptedException {
+    public void updateAddressForm(String address, String city, String state, String zip, String phone, String addressTitle) throws InterruptedException {
         mainNavigation.signInClick();
         logInValidCredentials();
         myAccountSection.myAddressPageClick();
@@ -73,7 +73,6 @@ public class MyAddressTests extends LoginTests{
         myAddressPage.phoneInput(phone);
         myAddressPage.addresTitleInput(addressTitle);
         myAddressPage.saveButton();
-
     }
     @AfterMethod
     public void posleSvakogTesta() throws InterruptedException {

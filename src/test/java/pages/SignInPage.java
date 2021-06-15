@@ -33,20 +33,20 @@ public class SignInPage {
         return driver.findElement(By.className("page-subheading"));
     }
 
-    public void emailFieldForUnregistredUser(String email)
-    {
+
+    public void emailFieldForUnregistredUser(String email) {
         getEmailFieldForUnregistred().sendKeys(email);
     }
-    public void createAccountButtonClick()
-    {
+
+    public void createAccountButtonClick() {
         getCreateAccountButton().click();
     }
-    public String errorInvalidEmailText()
-    {
+
+    public String errorInvalidEmailText() {
         return getErrorMessageInvalidEmail().getText();
     }
-    public String successfullySigInText()
-    {
+
+    public String successfullySigInText() {
         return getSuccessfullySignInMessage().getText();
     }
 }

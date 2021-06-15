@@ -14,17 +14,18 @@ public class LoginPage {
     WebElement signInMessage;
     WebElement errorMessageInvalidCredential;
 
-    public  LoginPage(WebDriver driver)
-    {
+    public  LoginPage(WebDriver driver) {
         super();
         this.driver=driver;
     }
 
     public WebElement getEmailField() {
+
         return driver.findElement(By.id("email"));
     }
 
     public WebElement getPasswordField() {
+
         return driver.findElement(By.id("passwd"));
     }
 
@@ -37,10 +38,12 @@ public class LoginPage {
     }
 
     public WebElement getLogOut() {
+
         return driver.findElement(By.className("logout"));
     }
 
     public WebElement getSignInMessage() {
+
         return driver.findElement(By.className("login"));
     }
 
@@ -48,32 +51,31 @@ public class LoginPage {
         return driver.findElement(By.className("alert-danger"));
     }
 
-    public void emailInput(String email)
-    {
+    public void emailInput(String email) {
         getEmailField().sendKeys(email);
     }
-    public void passwordInput(String password)
-    {
+
+    public void passwordInput(String password) {
         getPasswordField().sendKeys(password);
     }
-    public void signInClick()
-    {
+
+    public void signInClick() {
         getSignInButton().click();
     }
-    public String logInText()
-    {
+
+    public String logInText() {
         return getSuccessfullyLogInMessage().getText();
     }
-    public void logOutClick()
-    {
+
+    public void logOutClick() {
         getLogOut().click();
     }
-    public String logOutText()
-    {
+
+    public String logOutText() {
         return getSignInMessage().getText();
     }
-    public  String invalidCredentialsText()
-    {
+
+    public  String invalidCredentialsText() {
         return getErrorMessageInvalidCredential().getText();
     }
 }

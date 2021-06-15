@@ -16,6 +16,9 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected MyAddressPage myAddressPage;
     protected MyAccountSection myAccountSection;
+    protected MyWishListsPage myWishListsPage;
+    protected MyPersonalInformationPage myPersonalInformationPage;
+    protected WomenProductsPage womenProductsPage;
     protected ExcelReader excelReader;
     protected String homeUrl;
     @BeforeClass
@@ -29,6 +32,9 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         myAddressPage = new MyAddressPage(driver);
         myAccountSection = new MyAccountSection(driver);
+        myWishListsPage = new MyWishListsPage(driver);
+        womenProductsPage = new WomenProductsPage(driver);
+        myPersonalInformationPage = new MyPersonalInformationPage(driver);
         excelReader =  new ExcelReader("data/TestPlan.xlsx");
         homeUrl = "http://automationpractice.com/index.php";
 

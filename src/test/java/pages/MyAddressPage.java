@@ -52,14 +52,8 @@ public class MyAddressPage {
     }
     public WebElement getSuccessfulyAddNewAddress(){return driver.findElement(By.cssSelector(".last_item.item.box> li:first-of-type>.page-subheading"));}
     public WebElement getAddressTitle() { return driver.findElement(By.id("alias")); }
-    public WebElement getDeleteaddressButton() {
-      //  return driver.findElement(By.cssSelector(".last_item.alternate_item.box>.address_update>.btn.btn-default.button.button-small:last-of-type"));
-        return driver.findElement(By.cssSelector(".last_item.item.box>.address_update>.btn.btn-default.button.button-small:last-of-type"));
-        }
-    public WebElement getUpdateAddressButton() {
-        return driver.findElement(By.cssSelector(".last_item.item.box>.address_update>.btn.btn-default.button.button-small:first-of-type"));
-
-    }
+    public WebElement getDeleteaddressButton() { return driver.findElement(By.cssSelector(".last_item.item.box>.address_update>.btn.btn-default.button.button-small:last-of-type")); }
+    public WebElement getUpdateAddressButton() { return driver.findElement(By.cssSelector(".last_item.item.box>.address_update>.btn.btn-default.button.button-small:first-of-type")); }
 
     public void addNewAddressButtonClick() { getAddNewAddressButton().click(); }
     public void firstNameInput(String firstName)
@@ -77,15 +71,34 @@ public class MyAddressPage {
         getAddress().clear();
         getAddress().sendKeys(address);
     }
-    public void cityInput(String city) { getCity().clear(); getCity().sendKeys(city); }
-    public void stateInput(String state) { getState().click();getState().sendKeys(state);getState().sendKeys("ENTER"); }
-    public void phoneInput(String phone) { getPhone().sendKeys(phone); }
-    public void zipCodeInput(String zip) { getZipCode().clear(); getZipCode().sendKeys(zip); }
-    public void saveButton() { getSaveButton().click(); }
-    public String addNewAddresText() { return getSuccessfulyAddNewAddress().getText(); }
-    public void addresTitleInput(String title){ getAddressTitle().clear(); getAddressTitle().sendKeys(title);}
-    public void deleteAddress(){ getDeleteaddressButton().click();}
-    public void popUpClickOnDelete(){ Alert action = driver.switchTo().alert(); action.accept();}
-    public void updateAddressButton() { getUpdateAddressButton().click(); }
+    public void cityInput(String city) {
+        getCity().clear(); getCity().sendKeys(city); }
+
+    public void stateInput(String state) {
+        getState().click();getState().sendKeys(state);getState().sendKeys("ENTER"); }
+
+    public void phoneInput(String phone) {
+        getPhone().sendKeys(phone); }
+
+    public void zipCodeInput(String zip) {
+        getZipCode().clear(); getZipCode().sendKeys(zip); }
+
+    public void saveButton() {
+        getSaveButton().click(); }
+
+    public String addNewAddresText() {
+        return getSuccessfulyAddNewAddress().getText(); }
+
+    public void addresTitleInput(String title){
+        getAddressTitle().clear(); getAddressTitle().sendKeys(title);}
+
+    public void deleteAddress(){
+        getDeleteaddressButton().click();}
+
+    public void popUpClickOnDelete(){
+        Alert action = driver.switchTo().alert(); action.accept();}
+
+    public void updateAddressButton() {
+        getUpdateAddressButton().click(); }
 
 }
