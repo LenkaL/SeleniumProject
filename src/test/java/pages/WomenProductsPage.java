@@ -16,7 +16,6 @@ public class WomenProductsPage {
 
     public WomenProductsPage(WebDriver driver)
     {
-
         this.driver=driver;
     }
 
@@ -33,7 +32,6 @@ public class WomenProductsPage {
     }
 
     public WebElement getSuccesfulyAddProduct() {
-       // return driver.findElement(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/h2/span[2]"));
         return driver.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a"));
     }
 

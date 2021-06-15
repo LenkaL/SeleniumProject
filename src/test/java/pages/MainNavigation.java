@@ -29,10 +29,6 @@ public class MainNavigation {
     public void signInClick() {
         getSignInTab().click();
     }
-    /*public void myaccountClick()
-    {
-        getMyAccountTab().click();
-    }*/
 
     public void womanProductClick() {
         getWomanProductsTab().click();

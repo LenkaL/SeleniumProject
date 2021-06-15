@@ -42,7 +42,8 @@ public class MyWishListsPage {
     public String successfulyText() {
         return getSuccessfulyAddesList().getText();
     }
-    //Prebrojavanje redova tbody-ju - koliko ima redova toliko se wishlist-i dodalo
+
+    //Prebrojavanje redova u tbody-ju - koliko ima redova(tr) toliko se wishlist-i dodalo
     public String countAddedWishLists(){
         List<WebElement> rows = driver.findElements(By.cssSelector(".table.table-bordered > tbody>tr"));
         System.out.println(rows.size());
